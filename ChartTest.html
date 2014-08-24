@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>BR_Bar_Example</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<style type="text/css">
+${demo.css}
+		</style>
+		<script type="text/javascript">
+$(function () {
+
+    Highcharts.setOptions({
+        colors: ['#69D2E7', '#A7DBD8', '#E0E4CC', '#F38630', '#0277bd', '#01579b']
+    });
+
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+
+        credits: {
+            enabled: false
+        },
+
+        title: {
+            text: null
+        },
+
+        legend: {
+            itemStyle: {
+                "color": "#333333",
+                    "fontFamily": "Avenir",
+                    "fontSize": "12px",
+                    "fontWeight": "normal"
+            },
+            itemHoverStyle: {
+                fontWeight: "bold"
+            },
+            itemHiddenStyle: {
+                fontWeight: "normal"
+            }
+        },
+
+        xAxis: {
+            tickColor: '#C0C0C0',
+            tickWidth: 1,
+            tickLength: 10,
+            title: {
+                text: 'Transaction Date',
+                style: {
+                    color: "#707070",
+                    fontFamily: "Avenir Next",
+                    fontSize: "14px",
+                    fontWeight: "normal"
+                }
+            },
+            categories: [
+                '2011',
+                '2012',
+                '2013',
+                '2014'],
+            labels: {
+                style: {
+                    color: "#707070",
+                    fontFamily: "Avenir Next",
+                    fontSize: "12px",
+                    fontWeight: "normal"
+                }
+            }
+        },
+        yAxis: {
+            gridLineColor: '#C0C0C0',
+            title: {
+                text: 'Sum of Revenue',
+                style: {
+                    color: "#707070",
+                    fontFamily: "Avenir Next",
+                    fontSize: "14",
+                    fontWeight: "normal"
+                }
+            },
+            labels: {
+                format: '${value}',
+                style: {
+                    color: "#707070",
+                    fontFamily: "Avenir Next",
+                    fontSize: "12px",
+                    fontWeight: "normal"
+                }
+            }
+        },
+        tooltip: {
+            style: {
+                padding: '12',
+                fontWeight: 'normal',
+                fontFamily: 'Avenir Next',
+                fontSize: '14'
+            },
+            valuePrefix: '$'
+        },
+
+
+        series: [{
+            name: 'Ireland',
+            data: [49.9, 71.5, 106.4, 129.2]
+
+        }, {
+            name: 'The Netherlands',
+            data: [83.6, 78.8, 98.5, 93.4]
+
+        }, {
+            name: 'Poland',
+            data: [48.9, 38.8, 39.3, 41.4]
+
+        }, {
+            name: 'Singapore',
+            data: [42.4, 33.2, 34.5, 39.7]
+
+        }],
+        navigation: {
+            buttonOptions: {
+                enabled: false
+            }
+        },
+
+        plotOptions: {
+            column: {
+                pointPadding: 0.05,
+                borderWidth: 0
+            },
+            series: {
+                dataLabels: {
+                    enabled: false,
+                    format: "${point.y:.0f}",
+                    style: {
+                        color: "#333333",
+                        fontFamily: "Avenir Next",
+                        fontSize: "10px",
+                        fontWeight: "normal"
+                    }
+
+
+                }
+            },
+        },
+
+    });
+});
+
+		</script>
+	</head>
+	<body>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script src="http://code.highcharts.com/modules/no-data-to-display.js"></script>
+
+
+<div id="container" style="min-width: 100px; height: 1000px; margin: 0 auto"></div>
+
+	</body>
+</html>
